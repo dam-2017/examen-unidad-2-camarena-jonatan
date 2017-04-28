@@ -32,12 +32,16 @@
                 <ion-input type="text" formControlName="name"></ion-input>
             </ion-item>
             <ion-item>
-                <ion-label>lastname</ion-label>
-                <ion-input type="text" formControlName="lastname"></ion-input>
+                <ion-label>Firstlastname</ion-label>
+                <ion-input type="text" formControlName="lastnameP"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Secondlastname</ion-label>
+                <ion-input type="text" formControlName="lastnameM"></ion-input>
             </ion-item>
             <ion-item>
                 <ion-label>DOB</ion-label>
-                <ion-input type="text" formControlName="dob"></ion-input>
+                <ion-datetime displayFormat="YYYY/MM/DD" formControlName="dob"></ion-datetime>
             </ion-item>
         </ion-list>
         <button ion-button type="submit" [disabled]="!myForm.valid">Generate</button>
