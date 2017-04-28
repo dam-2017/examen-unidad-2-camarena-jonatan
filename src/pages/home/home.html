@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Ionic Blank
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <form [formGroup]="myForm" (ngSubmit)="sendData()">
+
+        <ion-list>
+            <ion-item>
+                <ion-label>Username</ion-label>
+                <ion-input type="text" formControlName="name"></ion-input>
+            </ion-item>
+            <p *ngIf="name.hasError('required') && name.touched" color="danger">requerido</p>
+            <p *ngIf="name.hasError('minlength') && name.touched" color="danger">minimo 6 </p>
+            <ion-item>
+                <ion-label>Password</ion-label>
+                <ion-input type="password" formControlName="password"></ion-input>
+            </ion-item>
+            <p *ngIf="password.hasError('required') && password.touched" color="danger">requerido</p>
+            <p *ngIf="password.hasError('minlength') && password.touched" color="danger">minimo 8 </p>
+        </ion-list>
+        <p *ngIf="pass && value" color="danger">contrasena o usuario incorrecto </p>
+        <button ion-button type="submit" [disabled]="!myForm.valid">login</button>
+    </form>
+</ion-content>
